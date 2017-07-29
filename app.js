@@ -1,7 +1,9 @@
 var fs = require('fs');
-var BasicCard = require('./BasicCard');
-var ClozeCard = require('./ClozeCard');
+// var BasicCard = require('./BasicCard');
+// var ClozeCard = require('./ClozeCard');
+var colors = require('colors');
 var inquirer = require('inquirer');
+var library = require('./cardLibrary.JSON');
 
 function openMenu() {
     inquirer.prompt([ //use inquirer to ask question
@@ -17,26 +19,26 @@ function openMenu() {
         switch (answer.menuOptions) {
 
             case 'Basic Card':
-                console.log("Cool...pulling up your basic cards now");
-                waitMsg = setTimeout(BasicCard, 3000);
+                console.log(colors.green("Cool...pulling up your basic cards now"));
+                waitMsg = setTimeout(BasicCard, 2000);
                 break;
 
             case 'Cloze Card':
-                console.log("Awesome! Let me get your cloze cards real quick...");
-                waitMsg = setTimeout(ClozeCard, 3000);
+                console.log(colors.green("Awesome! Let me get your cloze cards real quick..."));
+                waitMsg = setTimeout(ClozeCard, 2000);
 
-            case 'Create':
-                console.log("Ok lets make a new flashcard...");
-                waitMsg = setTimeout(createCard, 3000);
+            case 'Create New Card':
+                console.log(colors.green("Ok lets make a new flashcard..."));
+                waitMsg = setTimeout(createCard, 2000);
                 break;
 
             case 'Exit':
-                console.log("Thanks for using my app! ")
+                console.log(colors.yellow("Thanks for using my app! "));
                 break;
 
             default:
                 console.log("");
-                console.log("Sorry I don't understand");
+                console.log(colors.red("Sorry I don't understand"));
                 console.log("");
         }
 
@@ -92,7 +94,7 @@ function createCard() {
                     if (appData.anotherCard === "Yes") {
                         createCard(); // call the create card function again (recursion)
                     } else {
-                        setTimeout(openMenu, 1000); //reopen the main menu to user
+                        setTimeout(openMenu, 2000); //reopen the main menu to user
                     }
                 });
             });
@@ -136,7 +138,7 @@ function createCard() {
                     if (appData.anotherCard === "Yes") { //If 'Yes' then..
                         createCard(); //call the create card function again (recursion)
                     } else { //Else (if the answer isnt Yes then its No)...
-                        setTimeout(openMenu, 3000); //return the user to the open menu
+                        setTimeout(openMenu, 2000); //return the user to the open menu
                     }
                 });
             });
