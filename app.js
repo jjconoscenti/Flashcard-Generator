@@ -3,7 +3,7 @@ var fs = require('fs');
 // var ClozeCard = require('./ClozeCard');
 var colors = require('colors');
 var inquirer = require('inquirer');
-var library = require('./cardLibrary.JSON');
+var library = require('./cardLibrary.json');
 
 function openMenu() {
     inquirer.prompt([ //use inquirer to ask question
