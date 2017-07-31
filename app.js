@@ -154,3 +154,7 @@ function DisplayCards(card) {
 
     }
 }
+
+function showBasicCards();
+
+function showClozeCards();
