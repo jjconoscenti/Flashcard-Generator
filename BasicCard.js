@@ -1,9 +1,6 @@
 var fs = require("fs");
 
-module.exports = BasicCard;
-
 // basic flashcard constructor
-
 function BasicCard(front, back) {
     this.front = front;
     this.back = back;
@@ -21,3 +18,5 @@ function BasicCard(front, back) {
         });
     };
 }
+
+module.exports = BasicCard;
