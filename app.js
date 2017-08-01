@@ -168,3 +168,8 @@ function DisplayCards(card) {
 //     console.log("CLOZECARD1");
 //     console.log("CLOZECARD2");
 // }
+
+// push to log.txt
+function pushToLog() {
+
+}
