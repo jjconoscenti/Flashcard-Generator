@@ -156,7 +156,21 @@ function DisplayCards(card) {
     }
 }
 
-// function showBasicCards();
-//     if (card.type === "BasicCard") {
-//     }
-// function showClozeCards();
+// function showOnlyBasicCards();
+// if (card.type === "BasicCard") {
+//     console.log("Here are your basic cards");
+//     console.log("=====================================================");
+//     console.log("CARD 1");
+//     console.log("CARD 2");
+// } else {
+//     consle.log(colors.red("You don't have any Basic Cards at this time"));
+// }
+
+// function to show only Cloze Cards (cloze section)
+// function showOnlyClozeCards() {
+// if (card.type === ClozeCard) {
+//     console.log("Here are your cloze cards");
+//     console.log("=============================================================");
+//     console.log("CLOZECARD1");
+//     console.log("CLOZECARD2");
+// }
