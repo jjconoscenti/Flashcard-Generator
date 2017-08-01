@@ -34,11 +34,6 @@ function openMenu() {
             case 'Exit':
                 console.log(colors.yellow("Thanks for using my app! "));
                 break;
-
-            default:
-                console.log("");
-                console.log(colors.red("Sorry I don't understand"));
-                console.log("");
         }
 
     });
@@ -152,7 +147,6 @@ function DisplayCards(card) {
     } else if (card.type === "ClozeCard") {
         drawnCard = new ClozeCard(card.text, card.cloze);
         return drawnCard.clozeRemoved();
-
     }
 }
 
