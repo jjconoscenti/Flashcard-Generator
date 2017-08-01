@@ -19,6 +19,7 @@ function openMenu() {
             case 'Basic Card':
                 console.log(colors.green("Cool...pulling up your basic cards now"));
                 waitMsg = setTimeout(BasicCard, 2000);
+                DisplayCards();
                 break;
 
             case 'Cloze Card':
@@ -55,7 +56,7 @@ function createCard() {
 
     ]).then(function(appData) {
 
-        var cardType = appData.cardType; // "cardType" will store the choice from the cardType inquirer object
+        var cardType = appData.cardType;
         console.log(cardType);
 
         if (cardType === "Basic Card") {
@@ -72,16 +73,16 @@ function createCard() {
 
             ]).then(function(cardData) {
 
-                var cardObj = { //builds an object with front and back info
+                var cardObj = {
                     type: "BasicCard",
                     front: cardData.front,
                     back: cardData.back
                 };
-                library.push(cardObj); //push the new card into the array of cards
-                fs.writeFile("cardLibrary.json", JSON.stringify(library, null, 2)); //write the updated array to the carLibrary.json file
+                library.push(cardObj);
+                /
+                fs.writeFile("cardLibrary.json", JSON.stringify(library, null, 2));
 
-                inquirer.prompt([ //use inquirer to ask if the user wants to keep making cards
-                    {
+                inquirer.prompt([{
                         type: "list",
                         message: "Do you want to create another card?",
                         choices: ["Yes", "No"],
@@ -90,9 +91,9 @@ function createCard() {
 
                 ]).then(function(appData) {
                     if (appData.anotherCard === "Yes") {
-                        createCard(); // call the create card function again (recursion)
+                        createCard();
                     } else {
-                        setTimeout(openMenu, 2000); //reopen the main menu to user
+                        setTimeout(openMenu, 2000);
                     }
                 });
             });
@@ -118,9 +119,9 @@ function createCard() {
                     cloze: cardData.cloze
                 };
                 if (cardObj.text.indexOf(cardObj.cloze) !== -1) {
-                    library.push(cardObj); //push the new card into the array of cards
+                    library.push(cardObj);
                     fs.writeFile("cardLibrary.json", JSON.stringify(library, null, 2));
-                } else { //if the cloze doesnt match display error
+                } else {
                     console.log("Sorry, The cloze must match some word(s) in the text of your statement.");
 
                 }
@@ -155,6 +156,7 @@ function DisplayCards(card) {
     }
 }
 
-function showBasicCards();
-
-function showClozeCards();
+// function showBasicCards();
+//     if (card.type === "BasicCard") {
+//     }
+// function showClozeCards();
