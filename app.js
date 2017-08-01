@@ -18,17 +18,17 @@ function openMenu() {
 
             case 'Basic Card':
                 console.log(colors.green("Cool...pulling up your basic cards now"));
-                waitMsg = setTimeout(BasicCard, 2000);
+                waitMsg = setTimeout(BasicCard, 3000);
                 DisplayCards();
                 break;
 
             case 'Cloze Card':
                 console.log(colors.green("Awesome! Let me get your cloze cards real quick..."));
-                waitMsg = setTimeout(ClozeCard, 2000);
+                waitMsg = setTimeout(ClozeCard, 3000);
 
             case 'Create New Card':
                 console.log(colors.green("Ok lets make a new flashcard..."));
-                waitMsg = setTimeout(createCard, 2000);
+                waitMsg = setTimeout(createCard, 3000);
                 break;
 
             case 'Exit':
@@ -93,7 +93,7 @@ function createCard() {
                     if (appData.anotherCard === "Yes") {
                         createCard();
                     } else {
-                        setTimeout(openMenu, 2000);
+                        setTimeout(openMenu, 3000);
                     }
                 });
             });
@@ -128,15 +128,15 @@ function createCard() {
                 inquirer.prompt([{
                         type: "list",
                         message: "Awesome! Do you want to create another card?",
-                        choices: ["Yes", "No"],
+                        choices: ["Yep", "Nope"],
                         name: "anotherCard"
                     }
 
                 ]).then(function(appData) {
-                    if (appData.anotherCard === "Yes") {
+                    if (appData.anotherCard === "Yep") {
                         createCard();
                     } else {
-                        setTimeout(openMenu, 2000);
+                        setTimeout(openMenu, 3000);
                     }
                 });
             });
