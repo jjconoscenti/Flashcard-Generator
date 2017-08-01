@@ -34,6 +34,10 @@ function openMenu() {
             case 'Exit':
                 console.log(colors.yellow("Thanks for using my app! "));
                 break;
+            default:
+
+                console.log(colors.red("Sorry, please try again!"));
+
         }
 
     });
