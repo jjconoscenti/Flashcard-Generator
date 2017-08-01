@@ -78,7 +78,7 @@ function createCard() {
                     back: cardData.back
                 };
                 library.push(cardObj);
-                /
+
                 fs.writeFile("cardLibrary.json", JSON.stringify(library, null, 2));
 
                 inquirer.prompt([{
