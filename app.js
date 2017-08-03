@@ -20,12 +20,12 @@ function openMenu() {
 
             case 'Basic Card':
                 console.log(colors.green("Cool...pulling up your basic cards now"));
-                waitMsg = setTimeout(showAllCards, 3000);
+                waitMsg = setTimeout(showBasicCards, 3000);
                 break;
 
             case 'Cloze Card':
                 console.log(colors.green("Awesome! Let me get your cloze cards real quick..."));
-                waitMsg = setTimeout(showAllCards, 3000);
+                waitMsg = setTimeout(showClozeCards, 3000);
 
             case 'Create New Card':
                 console.log(colors.green("Ok lets make a new flashcard..."));
@@ -147,36 +147,31 @@ function createCard() {
 
 function showClozeCards() {
     var library = require('./cardLibrary.json');
-    if (count < library.length) {
-        if (library[count].text !== undefined) {
+    for (var i = 0; i < library.length; i++) {
+        if (library[i].text !== undefined) {
             console.log(colors.magenta('==============================================================='));
             console.log(colors.magenta('========================= CLOZE CARDS ========================='));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[count].text));
+            console.log(colors.magenta('Text: ' + library[i].text));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[count].cloze));
+            console.log(colors.magenta('Text: ' + library[i].cloze));
+            count++;
         }
-        count++;
-        openMenu();
-    } else {
-        count = 0;
-        openMenu();
     }
 }
 
 function showBasicCards() {
     var library = require('./cardLibrary.json');
-    if (count < library.length) {
-        if (library[count].front !== undefined) {
+    for (var i = 0; i < library.length; i++) {
+        if (library[i].text !== undefined) {
             console.log(colors.magenta('==============================================================='));
             console.log(colors.magenta('========================= CLOZE CARDS ========================='));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[count].text));
+            console.log(colors.magenta('Text: ' + library[i].text));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[count].cloze));
+            console.log(colors.magenta('Text: ' + library[i].cloze));
+            count++;
         }
-        count++;
-        openMenu();
     }
 }
 

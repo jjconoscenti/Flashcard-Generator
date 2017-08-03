@@ -42,5 +42,30 @@
         "type": "BasicCard",
         "front": "what is the capital of australia?",
         "back": "sydney"
+    },
+    {
+        "type": "BasicCard",
+        "front": "clear",
+        "back": "clear"
+    },
+    {
+        "type": "ClozeCard",
+        "text": "jj",
+        "cloze": "jj"
+    },
+    {
+        "type": "ClozeCard",
+        "text": "kkkkk",
+        "cloze": "kkk"
+    },
+    {
+        "type": "BasicCard",
+        "front": "",
+        "back": ""
+    },
+    {
+        "type": "ClozeCard",
+        "text": "kkkokoko",
+        "cloze": ""
     }
 ]
