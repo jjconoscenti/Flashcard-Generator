@@ -5,6 +5,8 @@ var inquirer = require('inquirer');
 var library = require('./cardLibrary.json');
 var fs = require('fs');
 
+count = 0;
+
 function openMenu() {
     inquirer.prompt([{
         type: "list",
@@ -18,13 +20,12 @@ function openMenu() {
 
             case 'Basic Card':
                 console.log(colors.green("Cool...pulling up your basic cards now"));
-                waitMsg = setTimeout(BasicCard, 3000);
-                DisplayCards();
+                waitMsg = setTimeout(showAllCards, 3000);
                 break;
 
             case 'Cloze Card':
                 console.log(colors.green("Awesome! Let me get your cloze cards real quick..."));
-                waitMsg = setTimeout(ClozeCard, 3000);
+                waitMsg = setTimeout(showAllCards, 3000);
 
             case 'Create New Card':
                 console.log(colors.green("Ok lets make a new flashcard..."));
@@ -144,36 +145,68 @@ function createCard() {
     });
 };
 
-function DisplayCards(card) {
-    if (card.type === "BasicCard") {
-        drawnCard = new BasicCard(card.front, card.back);
-        return drawnCard.front;
-    } else if (card.type === "ClozeCard") {
-        drawnCard = new ClozeCard(card.text, card.cloze);
-        return drawnCard.clozeRemoved();
+function showClozeCards() {
+    var library = require('./cardLibrary.json');
+    if (count < library.length) {
+        if (library[count].text !== undefined) {
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('========================= CLOZE CARDS ========================='));
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('Text: ' + library[count].text));
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('Text: ' + library[count].cloze));
+        }
+        count++;
+        openMenu();
+    } else {
+        count = 0;
+        openMenu();
     }
 }
 
-// function showOnlyBasicCards();
-// if (card.type === "BasicCard") {
-//     console.log("Here are your basic cards");
-//     console.log("=====================================================");
-//     console.log("CARD 1");
-//     console.log("CARD 2");
-// } else {
-//     consle.log(colors.red("You don't have any Basic Cards at this time"));
-// }
-
-// function to show only Cloze Cards (cloze section)
-// function showOnlyClozeCards() {
-// if (card.type === ClozeCard) {
-//     console.log("Here are your cloze cards");
-//     console.log("=============================================================");
-//     console.log("CLOZECARD1");
-//     console.log("CLOZECARD2");
-// }
-
-// push to log.txt
-function pushToLog() {
-
+function showBasicCards() {
+    var library = require('./cardLibrary.json');
+    if (count < library.length) {
+        if (library[count].front !== undefined) {
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('========================= CLOZE CARDS ========================='));
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('Text: ' + library[count].text));
+            console.log(colors.magenta('==============================================================='));
+            console.log(colors.magenta('Text: ' + library[count].cloze));
+        }
+        count++;
+        openMenu();
+    }
 }
+
+
+
+// function showAllCards() {
+//     var library = require('./cardLibrary.json');
+
+//     if (count < library.length) {
+//         if (library[count].front !== undefined) {
+//             console.log(colors.blue('==============================================================='));
+//             console.log(colors.blue('========================= BASIC CARDS ========================='));
+//             console.log(colors.blue('==============================================================='));
+//             console.log('Front: ' + library[count].front);
+//             console.log(colors.blue('==============================================================='));
+//             console.log('Front: ' + library[count].back);
+//             console.log(colors.blue('==============================================================='));
+//             console.log(colors.blue('==============================================================='));
+//         } else {
+//             console.log(colors.magenta('==============================================================='));
+//             console.log(colors.magenta('========================= CLOZE CARDS ========================='));
+//             console.log(colors.magenta('==============================================================='));
+//             console.log(colors.magenta('Text: ' + library[count].text));
+//             console.log(colors.magenta('==============================================================='));
+//             console.log(colors.magenta('Text: ' + library[count].cloze));
+//         }
+//         count++;
+//         showAllCards();
+//     } else {
+//         count = 0;
+//         openMenu();
+//     }
+// }

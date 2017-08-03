@@ -1,42 +1,46 @@
-[
-  {
-    "type": "BasicCard",
-    "front": "What is the capitol of the United States?",
-    "back": "Washington DC"
-  },
-  {
-    "type": "ClozeCard",
-    "text": "Washington DC is the capitol of the United States",
-    "cloze": "Washington DC"
-  },
-  {
-    "type": "BasicCard",
-    "front": "What is the capitol of Italy?",
-    "back": "Rome"
-  },
-  {
-    "type": "ClozeCard",
-    "text": "Rome is the capitol of the Italy",
-    "cloze": "Rome"
-  },
-  {
-    "type": "BasicCard",
-    "front": "What is the capitol of Great Britain?",
-    "back": "London"
-  },
-  {
-    "type": "ClozeCard",
-    "text": "London is the capitol of the Great Britain",
-    "cloze": "London"
-  },
-  {
-    "type": "BasicCard",
-    "front": "What is my middle name?",
-    "back": "Leonardo"
-  },
-  {
-    "type": "BasicCard",
-    "front": "Who is Kanye West married to?",
-    "back": "Kim Kardashian"
-  }
+[{
+        "type": "BasicCard",
+        "front": "What is the capitol of the United States?",
+        "back": "Washington DC"
+    },
+    {
+        "type": "ClozeCard",
+        "text": "Washington DC is the capitol of the United States",
+        "cloze": "Washington DC"
+    },
+    {
+        "type": "BasicCard",
+        "front": "What is the capitol of Italy?",
+        "back": "Rome"
+    },
+    {
+        "type": "ClozeCard",
+        "text": "Rome is the capitol of the Italy",
+        "cloze": "Rome"
+    },
+    {
+        "type": "BasicCard",
+        "front": "What is the capitol of Great Britain?",
+        "back": "London"
+    },
+    {
+        "type": "ClozeCard",
+        "text": "London is the capitol of the Great Britain",
+        "cloze": "London"
+    },
+    {
+        "type": "BasicCard",
+        "front": "What is my middle name?",
+        "back": "Leonardo"
+    },
+    {
+        "type": "BasicCard",
+        "front": "Who is Kanye West married to?",
+        "back": "Kim Kardashian"
+    },
+    {
+        "type": "BasicCard",
+        "front": "what is the capital of australia?",
+        "back": "sydney"
+    }
 ]
