@@ -163,13 +163,13 @@ function showClozeCards() {
 function showBasicCards() {
     var library = require('./cardLibrary.json');
     for (var i = 0; i < library.length; i++) {
-        if (library[i].text !== undefined) {
-            console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('========================= CLOZE CARDS ========================='));
-            console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[i].text));
-            console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[i].cloze));
+        if (library[i].front !== undefined) {
+            console.log(colors.cyan('==============================================================='));
+            console.log(colors.cyan('========================= BASIC CARDS ========================='));
+            console.log(colors.cyan('==============================================================='));
+            console.log(colors.cyan('Text: ' + library[i].front));
+            console.log(colors.cyan('==============================================================='));
+            console.log(colors.cyan('Text: ' + library[i].back));
             count++;
         }
     }
