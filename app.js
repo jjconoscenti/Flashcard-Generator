@@ -154,7 +154,7 @@ function showClozeCards() {
             console.log(colors.magenta('==============================================================='));
             console.log(colors.white('Text: ' + library[i].text));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.white('Text: ' + library[i].cloze));
+            console.log(colors.white('Cloze: ' + library[i].cloze));
             count++;
         }
     }
