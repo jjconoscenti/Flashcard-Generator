@@ -152,9 +152,9 @@ function showClozeCards() {
             console.log(colors.magenta('==============================================================='));
             console.log(colors.magenta('========================= CLOZE CARDS ========================='));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[i].text));
+            console.log(colors.white('Text: ' + library[i].text));
             console.log(colors.magenta('==============================================================='));
-            console.log(colors.magenta('Text: ' + library[i].cloze));
+            console.log(colors.white('Text: ' + library[i].cloze));
             count++;
         }
     }
@@ -167,9 +167,9 @@ function showBasicCards() {
             console.log(colors.cyan('==============================================================='));
             console.log(colors.cyan('========================= BASIC CARDS ========================='));
             console.log(colors.cyan('==============================================================='));
-            console.log(colors.cyan('Text: ' + library[i].front));
+            console.log(colors.gray('Front: ' + library[i].front));
             console.log(colors.cyan('==============================================================='));
-            console.log(colors.cyan('Text: ' + library[i].back));
+            console.log(colors.gray('Back: ' + library[i].back));
             count++;
         }
     }
